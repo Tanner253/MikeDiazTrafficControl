@@ -13,17 +13,23 @@
 ***[Explain your app, should be at least a paragraph. What does it do? Why should I use? Sell your product!]***
 
 The web application consists of a frontend written in Razor views, HTML, CSS,
-Bootstrap, Popper, and jQuery. The backend was written in C# using ASP.NET Core 2, Entity Framework Core, and the MVC framework.
+Bootstrap, Popper, and jQuery. The backend was written in C# using ASP.NET Core 3.1, Entity Framework Core, and the MVC framework.
 
-An interface is provided to create new blog
-posts, view existing blog posts, edit existing blog posts, delete existing
-blog posts, and search by both keywords and usernames. All blog posts can be
-enriched using Azure Language Services (part of Microsoft's Cognitive Services
-suite), Bing Image API, and Parallel Dots (for automated tagging of posts via
-key phrases detected within the post's body). Image enrichments can be added
-based on the overall sentiment score (a range 0.0 - 1.0 related to the mood
-of the post) and key phrases / keywords detected in the posts. Optionally, users
-can choose to opt-out of these features for privacy or data collection concerns.
+When the user lands on the Home page of the website they will be greeted with an about me page where the social media influencer
+will have input some information about themselves and their lifestyle and explain why the website they are on is important to them and their growth as a person.
+There will be more information found on the homepage like information about business opportunities, Resume information, Affiliation information, and contact information
+(maybe even just a "submit a ticket" section where any user can submit requests or thoughts for the purpose of business and networking)
+
+After the user gets to know the social media influencer and trust/some sort of consumer relationship is formed, push users to browse products 
+the social media influencer is sponsored with, and products the influencer endorses publicly. The user will be able to read about the product in a separate
+catalog from the store page, and if they are interested in buying the product with the "PROMO CODE" to save money/support the influencer then there will be a BUY ME button
+that links the user to the item and checkout page directly (Hopefully provided by the companies to the influencer when they are sponsored) where sales can be made to bring in
+money for the social media influencer. The website will redirect traffic while informing them of products and serving them advertisements. 
+
+Ideally, users come to the site, read about their influencers, read their endorsements, and then via inputting the promo code manually or clicking the buy me button
+purchasing the item, hopefully increasing overall profit margins by at least 20-30% than prior to using this web app.
+
+
 
 ---------------------------------
 ## User Stories:
