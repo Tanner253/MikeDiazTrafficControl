@@ -26,6 +26,19 @@ of the post) and key phrases / keywords detected in the posts. Optionally, users
 can choose to opt-out of these features for privacy or data collection concerns.
 
 ---------------------------------
+## User Stories:
+ - As an User I would like to be able to use an intuitive web app to purchase products that my favorite social media influencer use.
+ - As an User I would like to be able to learn about my favorite social media influencer while browsing their products.
+ - As an User I would like to be able to read endorsments left by the social media influencer detailing the viability and usefulness of a given product.
+ - As an User I would like the web app to be simple and quick to use.
+
+ - As a Developer I would like to have a secure back end database to secure the information inputed when creating new objects in the database.
+ - As a Developer I would like to have Identity and Authorization in the app so an ADMIN page can be used to manage the website without developer interaction.
+ - As a Developer I would like the app to have low load times, clean UX and UI, and a clear and concise reason for being on the website so theres no confusion for the user.
+ - As a Developer I would like to handle as many user input errors as possible to avoid any server side crashes when creating new database entrys.
+ - As a Developer I need to process the inputs given and edit them accordingly to fit the requirements of the database.
+ - As a Developer I would like to complete Identity and Authorization within the next week.
+---------------------------------
 
 ## Tools Used
 Microsoft Visual Studio Community 2017 (Version 15.5.7)
@@ -37,6 +50,8 @@ Microsoft Visual Studio Community 2017 (Version 15.5.7)
 - xUnit
 - Bootstrap
 - Azure
+
+- Blob storage
 
 
 ---------------------------------
@@ -73,7 +88,7 @@ dotnet run
 ---------------------------------
 
 ## Usage
-***[Provide some images of your app with brief description as title]***
+COMING SOON 
 
 ### Overview of Recent Posts
 ![Overview of Recent Posts](https://via.placeholder.com/500x250)
@@ -89,13 +104,16 @@ dotnet run
 
 ---------------------------
 ## Data Flow (Frontend, Backend, REST API)
+COMING SOON
 ***[Add a clean and clear explanation of what the data flow is. Walk me through it.]***
 ![Data Flow Diagram](/assets/img/Flowchart.png)
 
 ---------------------------
 ## Data Model
 
+
 ### Overall Project Schema
+COMING SOON
 ***[Add a description of your DB schema. Explain the relationships to me.]***
 ![Database Schema](/assets/img/ERD.png)
 
@@ -107,14 +125,13 @@ dotnet run
 | Parameter | Type | Required |
 | --- | --- | --- |
 | ID  | int | YES |
-| Summary | string | YES |
-| Content | string | YES |
-| Tags | string(s) | NO |
-| Picture | img jpeg/png | NO |
-| Sentiment | float | NO |
-| Keywords | string(s) | NO |
-| Related Posts | links | NO |
-| Date | date/time object | YES |
+| ProductName | string | YES |
+| ProductDescription | string | YES |
+| ProductEndorsment | string | YES | 
+| ProductImage | string | YES |
+| ProductLink/ReferralLink | string | YES
+| MEDIA? | string | NO
+
 
 
 ### User
@@ -122,17 +139,15 @@ dotnet run
 | Parameter | Type | Required |
 | --- | --- | --- |
 | ID  | int | YES |
-| Name/Author | string | YES |
-| Posts | list | YES |
+| Name | string | YES |
+| Username | string | YES |
+| Email	 | string	| YES	|
 
 ---------------------------
 
 ## Change Log
 
-1.4: *Added OAuth for MySpace* - 23 Jan 2003
-1.3: *Changed email handler to Alta Vista, fixed issue with styling on Netscape Navigator browser.* - 21 Dec 1999
-1.2: *Fixed bug where pages would not load due to temp data* - 16 Jun 1998
-1.1: *Added ability for user to change photos on a post* - 12 May 1998
+0.0: Edits README init				<> 9/11
 
 ------------------------------
 
