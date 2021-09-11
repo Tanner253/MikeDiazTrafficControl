@@ -4,13 +4,8 @@
 
 # Project MK-Products
 ---------------------------------
-## We are deployed on Azure! (soon)
 
-[project url here]
-
----------------------------------
 ## Web Application
-***[Explain your app, should be at least a paragraph. What does it do? Why should I use? Sell your product!]***
 
 The web application consists of a frontend written in Razor views, HTML, CSS,
 Bootstrap, Popper, and jQuery. The backend was written in C# using ASP.NET Core 3.1, Entity Framework Core, and the MVC framework.
