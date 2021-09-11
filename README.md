@@ -1,10 +1,10 @@
-# ***Project README Example***
+# Active Sponsors MKD
 ---------------------------------
 ---------------------------------
 
-# Project A.M.A.N.D.A.
+# Project MK-Products
 ---------------------------------
-## We are deployed on Azure!
+## We are deployed on Azure! (soon)
 
 [project url here]
 
@@ -37,14 +37,14 @@ Microsoft Visual Studio Community 2017 (Version 15.5.7)
 - xUnit
 - Bootstrap
 - Azure
-- Parallel Dots API
+
 
 ---------------------------------
 
 ## Recent Updates
 
 #### V 1.4
-*Added OAuth for MySpace* - 23 Jan 2003
+
 
 ---------------------------
 
@@ -68,7 +68,7 @@ Once the database has been created, the application can be run. Options for runn
 cd YourRepo/YourProject
 dotnet run
 ```
-Unit testing is included in the AmandaFE/FrontendTesting project using the xUnit test framework. Tests have been provided for models, view models, controllers, and utility classes for the application.
+
 
 ---------------------------------
 
@@ -128,7 +128,7 @@ Unit testing is included in the AmandaFE/FrontendTesting project using the xUnit
 ---------------------------
 
 ## Change Log
-***[The change log will list any changes made to the code base. This includes any changes from TA/Instructor feedback]***
+
 1.4: *Added OAuth for MySpace* - 23 Jan 2003
 1.3: *Changed email handler to Alta Vista, fixed issue with styling on Netscape Navigator browser.* - 21 Dec 1999
 1.2: *Fixed bug where pages would not load due to temp data* - 16 Jun 1998
@@ -137,12 +137,8 @@ Unit testing is included in the AmandaFE/FrontendTesting project using the xUnit
 ------------------------------
 
 ## Authors
-Albus Dumbbledore
-Igor Karkaroff
-Minerva McGonagall
-Leta Lestrange
-Gellert Grindelwald
+Tanner Percival
 
 ------------------------------
 
-For more information on Markdown: https://www.markdownguide.org/cheat-sheet
+More Coming Soon!
