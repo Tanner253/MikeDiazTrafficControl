@@ -37,6 +37,7 @@ purchasing the item, hopefully increasing overall profit margins by at least 20-
  - As an User I would like to be able to learn about my favorite social media influencer while browsing their products.
  - As an User I would like to be able to read endorsments left by the social media influencer detailing the viability and usefulness of a given product.
  - As an User I would like the web app to be simple and quick to use.
+ - As an User i would like to opt into email updates and email verification for account creation
 
  - As a Developer I would like to have a secure back end database to secure the information inputed when creating new objects in the database.
  - As a Developer I would like to have Identity and Authorization in the app so an ADMIN page can be used to manage the website without developer interaction.
@@ -58,6 +59,7 @@ Microsoft Visual Studio Community 2017 (Version 15.5.7)
 - Azure
 
 - Blob storage
+- SendGrid
 
 
 ---------------------------------
