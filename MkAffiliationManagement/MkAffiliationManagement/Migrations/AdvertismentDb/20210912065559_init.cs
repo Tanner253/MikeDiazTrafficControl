@@ -2,7 +2,7 @@
 
 namespace MkAffiliationManagement.Migrations.AdvertismentDb
 {
-    public partial class @int : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,7 +31,7 @@ namespace MkAffiliationManagement.Migrations.AdvertismentDb
             migrationBuilder.InsertData(
                 table: "Ad",
                 columns: new[] { "ID", "Image", "ProductEndorsment", "ProductLink", "ProductName", "ProductPromotionalCode" },
-                values: new object[] { 2, "IMAGE_URI_", "This is my endorsment for this product its absolutley amazing in almost every way", "This is the link to the product.... ", "example product # 2", "SOMENUMBERSANDLETTERS" });
+                values: new object[] { 2, "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/c368aa69-428f-421f-a59a-cc6d1c83460d/af-1-1-mens-shoes-kcdPxn.png", "This is my endorsment for this product its absolutley amazing in almost every way", "https://www.nike.com/t/af-1-1-mens-shoes-kcdPxn/DB2576-001", "Nike AF 1/1 (F)", "NikePr0M0" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

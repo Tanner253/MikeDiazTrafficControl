@@ -62,11 +62,11 @@ namespace MkAffiliationManagement.Migrations.AdvertismentDb
                         new
                         {
                             ID = 2,
-                            Image = "IMAGE_URI_",
+                            Image = "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/c368aa69-428f-421f-a59a-cc6d1c83460d/af-1-1-mens-shoes-kcdPxn.png",
                             ProductEndorsment = "This is my endorsment for this product its absolutley amazing in almost every way",
-                            ProductLink = "This is the link to the product.... ",
-                            ProductName = "example product # 2",
-                            ProductPromotionalCode = "SOMENUMBERSANDLETTERS"
+                            ProductLink = "https://www.nike.com/t/af-1-1-mens-shoes-kcdPxn/DB2576-001",
+                            ProductName = "Nike AF 1/1 (F)",
+                            ProductPromotionalCode = "NikePr0M0"
                         });
                 });
 #pragma warning restore 612, 618
