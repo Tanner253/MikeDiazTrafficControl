@@ -159,7 +159,7 @@ COMING SOON
 ## Change Log
 
 0.0: Edits README init				<> 9/11
-
+0.1 Scaffolds identity DB <> 9/11
 ------------------------------
 
 ## Authors
