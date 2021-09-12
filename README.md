@@ -93,13 +93,13 @@ dotnet run
 ## Usage
 COMING SOON 
 ### Creating an account
-![Creating an account with validation](Assets/RegisterFail.PNG)
+![Creating an account with validation](/Assets/RegisterFail.PNG)
 
 ### Home Page Greeting
-![Welcome Page](Assets/Welcome.PNG)
+![Welcome Page](/Assets/Welcome.PNG)
 
 ### Login
-![Login](Assets/Login.PNG)
+![Login](/Assets/Login.PNG)
 
 ### Overview of Recent Posts
 ![Overview of Recent Posts](https://via.placeholder.com/500x250)
