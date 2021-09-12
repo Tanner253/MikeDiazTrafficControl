@@ -5,9 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Azure.ServiceBus.Primitives;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MkAffiliationManagement.Areas.Identity.Data;
+using MkAffiliationManagement.data;
+using MkAffiliationManagement.Data;
 
 namespace MkAffiliationManagement
 {
@@ -15,7 +21,9 @@ namespace MkAffiliationManagement
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder().AddEnvironmentVariables();
+            builder.AddUserSecrets<Startup>();
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -25,6 +33,24 @@ namespace MkAffiliationManagement
         {
             services.AddRazorPages();
             services.AddControllersWithViews();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+            });
+            services.AddIdentity<ApplicationUser, ApplicationRoles>()
+                .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().AddDefaultUI();
+ 
+
+            //inject database
+            services.AddDbContext<AdvertismentDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
+            services.AddDbContext<ApplicationDbContext>(options =>
+           options.UseSqlServer(Configuration.GetConnectionString("ApplicationDbContextConnection")));
+
+
+
+
+
+            ///services.AddScoped<IAdvertismentManager, AdvertismentServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,6 +59,7 @@ namespace MkAffiliationManagement
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
             }
             else
             {
