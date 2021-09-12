@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MkAffiliationManagement.Models.Advertisment>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/site.css" />
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductEndorsment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPromotionalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                CLICK ME!
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="@Html.DisplayFor(modelItem => item.ProductLink)">@Html.DisplayFor(modelItem => item.ProductName)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductEndorsment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductPromotionalCode)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">PRODUCT LINK</a>
+                </td>
+                <td>
+                    <img width="250" height="380" src="@item.Image" />
+                </td>
+                <td>
+                    <a class="btn btn-outline-success btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">BUY ME!</a>
+                </td>
+                <td>
+                    <a style="margin-bottom:10px;" class="btn btn-outline-primary btn-lg" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                    <a class="btn btn-outline-info btn-lg" asp-action="Details" asp-route-id="@item.ID">Details</a>
+                    <a style="margin-top: 10px " class="btn btn-outline-danger btn-lg" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

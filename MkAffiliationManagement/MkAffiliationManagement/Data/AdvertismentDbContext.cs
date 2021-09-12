@@ -38,15 +38,15 @@ namespace MkAffiliationManagement.data
                 new Advertisment
                 {
                     ID = 2,
-                    ProductName = "example product # 2",
+                    ProductName = "Nike AF 1/1 (F)",
                     ProductEndorsment= "This is my endorsment for this product its absolutley amazing in almost every way",
-                    Image = "IMAGE_URI_",
-                    ProductPromotionalCode = "SOMENUMBERSANDLETTERS",
-                    ProductLink = "This is the link to the product.... "
+                    Image = "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/c368aa69-428f-421f-a59a-cc6d1c83460d/af-1-1-mens-shoes-kcdPxn.png",
+                    ProductPromotionalCode = "NikePr0M0",
+                    ProductLink = "https://www.nike.com/t/af-1-1-mens-shoes-kcdPxn/DB2576-001"
 
 
                 }
-
+                
 
             );
         }
