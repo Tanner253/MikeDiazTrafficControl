@@ -92,6 +92,14 @@ dotnet run
 
 ## Usage
 COMING SOON 
+### Creating an account
+![Overview of Recent Posts](https://via.placeholder.com/500x250)
+
+### Home Page Greeting
+![Overview of Recent Posts](https://via.placeholder.com/500x250)
+
+### Login
+![Overview of Recent Posts](https://via.placeholder.com/500x250)
 
 ### Overview of Recent Posts
 ![Overview of Recent Posts](https://via.placeholder.com/500x250)
