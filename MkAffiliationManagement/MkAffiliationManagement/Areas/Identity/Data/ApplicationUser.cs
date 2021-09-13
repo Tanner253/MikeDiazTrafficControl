@@ -18,7 +18,7 @@ namespace MkAffiliationManagement.Areas.Identity.Data
 
     public class ApplicationRoles : IdentityRole
     {
-        public const string MEMBER = "MEMBER";
-        public const string ADMIN = "ADMIN";
+        public const string Member = "Member";
+        public const string Admin = "Admin";
     }
 }
