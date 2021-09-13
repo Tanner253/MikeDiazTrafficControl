@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MkAffiliationManagement.Models;
 using MkAffiliationManagement.data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MkAffiliationManagement.Controllers
 {
@@ -18,7 +19,6 @@ namespace MkAffiliationManagement.Controllers
         {
             _context = context;
         }
-
         // GET: Advertisments
         public async Task<IActionResult> Index()
         {
@@ -44,6 +44,7 @@ namespace MkAffiliationManagement.Controllers
         }
 
         // GET: Advertisments/Create
+        [Authorize(Policy = "ADMIN")]
         public IActionResult Create()
         {
             return View();

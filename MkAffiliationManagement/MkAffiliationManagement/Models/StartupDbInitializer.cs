@@ -14,8 +14,8 @@ namespace MkAffiliationManagement.Models
     {
         private static List<ApplicationRoles> Roles = new List<ApplicationRoles>()
         {
-            new ApplicationRoles{ Name = ApplicationRoles.Admin, NormalizedName = ApplicationRoles.Admin.ToUpper() },
-            new ApplicationRoles{Name = ApplicationRoles.Member, NormalizedName = ApplicationRoles.Member.ToUpper() }
+            new ApplicationRoles{ Name = ApplicationRoles.ADMIN, NormalizedName = ApplicationRoles.ADMIN.ToUpper() },
+            new ApplicationRoles{Name = ApplicationRoles.MEMBER, NormalizedName = ApplicationRoles.ADMIN.ToUpper() }
 
         };
     public static void SeedData(IServiceProvider servicesProvider, UserManager<ApplicationUser> userManager)
@@ -52,8 +52,8 @@ namespace MkAffiliationManagement.Models
                         ("user1").Result == null)
             {
                 ApplicationUser user = new ApplicationUser();
-                user.UserName = "ADMINMK";
-                user.Email = "ADMIN@gmail.com";
+                user.UserName = "ADMINMK@gmail.com";
+                user.Email = "ADMINMK@gmail.com";
                 user.FirstName = "MKADMIN";
                 user.LastName = "STAFF";
                 
@@ -61,10 +61,10 @@ namespace MkAffiliationManagement.Models
                 IdentityResult result = userManager.CreateAsync
                 (user, "MkDIAZ32$").Result;
 
-             /*   if (result.Succeeded)
+             if (result.Succeeded)
                 {
-                    userManager.AddToRoleAsync(user, "Admin").Wait();
-                }*/
+                    userManager.AddToRoleAsync(user, "ADMIN").Wait();
+                }
             }
 
 
