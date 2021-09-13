@@ -14,6 +14,8 @@ using Microsoft.Extensions.Hosting;
 using MkAffiliationManagement.Areas.Identity.Data;
 using MkAffiliationManagement.data;
 using MkAffiliationManagement.Data;
+using MkAffiliationManagement.Models.Interfaces;
+using MkAffiliationManagement.Models.Services;
 
 namespace MkAffiliationManagement
 {
@@ -33,10 +35,13 @@ namespace MkAffiliationManagement
         {
             services.AddRazorPages();
             services.AddControllersWithViews();
+
+
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
             });
+
             services.AddIdentity<ApplicationUser, ApplicationRoles>()
                 .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().AddDefaultUI();
  
@@ -50,7 +55,7 @@ namespace MkAffiliationManagement
 
 
 
-            ///services.AddScoped<IAdvertismentManager, AdvertismentServices>();
+            services.AddScoped<IAdvertismentManager, AdvertismentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

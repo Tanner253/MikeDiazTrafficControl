@@ -131,7 +131,7 @@ COMING SOON
 ---------------------------
 ## Model Properties and Requirements
 
-### Blog
+### Advertisment/Sponsorship product
 
 | Parameter | Type | Required |
 | --- | --- | --- |
@@ -150,17 +150,23 @@ COMING SOON
 | Parameter | Type | Required |
 | --- | --- | --- |
 | ID  | int | YES |
-| Name | string | YES |
-| Username | string | YES |
+| Name | string | NO |
+| Username | string | NO |
 | Email	 | string	| YES	|
 
 ---------------------------
 
 ## Change Log
 
-- 0.0: Edits README init				<> 9/11
-- 0.1 Scaffolds identity DB <> 9/11'
-- 
+
+- 1.0	| Edits Readme
+- 1.1.0 | Creates Model classes, Sets up Schemas for Databases, Initializes Identity
+- 1.1.1 | Initialization and handling of databases
+- 1.1.2 | Customization of Identity/Roles
+- 1.1.3 | Repository design pattern of Advertisment model and database
+
+
+
 ------------------------------
 
 ## Authors
