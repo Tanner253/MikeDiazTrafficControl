@@ -126,7 +126,7 @@ COMING SOON
 ---------------------------
 ## Model Properties and Requirements
 
-### Blog
+### Advertisment/Sponsorship product
 
 | Parameter | Type | Required |
 | --- | --- | --- |
@@ -145,8 +145,8 @@ COMING SOON
 | Parameter | Type | Required |
 | --- | --- | --- |
 | ID  | int | YES |
-| Name | string | YES |
-| Username | string | YES |
+| Name | string | NO |
+| Username | string | NO |
 | Email	 | string	| YES	|
 
 ---------------------------
