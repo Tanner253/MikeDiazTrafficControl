@@ -40,7 +40,7 @@ namespace MkAffiliationManagement
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+                options.AddPolicy("ADMIN", policy => policy.RequireRole("ADMIN"));
             });
 
             services.AddIdentity<ApplicationUser, ApplicationRoles>()
@@ -60,7 +60,7 @@ namespace MkAffiliationManagement
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public async Task Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<ApplicationUser> userManager, IServiceProvider service)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<ApplicationUser> userManager, IServiceProvider service)
         {
             if (env.IsDevelopment())
             {
@@ -80,7 +80,7 @@ namespace MkAffiliationManagement
 
             app.UseAuthorization();
             app.UseAuthentication();
-            await StartupDbInitializer.SeedData(service, userManager);
+            StartupDbInitializer.SeedData(service, userManager);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

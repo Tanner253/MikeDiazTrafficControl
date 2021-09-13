@@ -12,34 +12,34 @@ namespace MkAffiliationManagement.Models
 {
     public class StartupDbInitializer
     {
-        private static List<IdentityRole> Roles = new List<IdentityRole>()
+        private static List<ApplicationRoles> Roles = new List<ApplicationRoles>()
         {
-            new IdentityRole{ Name = ApplicationRoles.Admin, NormalizedName = ApplicationRoles.Admin.ToUpper() },
-            new IdentityRole{Name = ApplicationRoles.Member, NormalizedName = ApplicationRoles.Member.ToUpper() }
+            new ApplicationRoles{ Name = ApplicationRoles.Admin, NormalizedName = ApplicationRoles.Admin.ToUpper() },
+            new ApplicationRoles{Name = ApplicationRoles.Member, NormalizedName = ApplicationRoles.Member.ToUpper() }
 
         };
-    public static async Task SeedData(IServiceProvider servicesProvider, UserManager<ApplicationUser> userManager)
+    public static void SeedData(IServiceProvider servicesProvider, UserManager<ApplicationUser> userManager)
         {
             using (var dbContext = new ApplicationDbContext(servicesProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
                 dbContext.Database.EnsureCreated();
                 
 
-                await AddRoles(dbContext);
+                AddRoles(dbContext);
                 SeedUsers(userManager);
             }
         }
 
-        private static async Task AddRoles(ApplicationDbContext dbContext)
+        private static void AddRoles(ApplicationDbContext dbContext)
         {
             if (dbContext.Roles.Any())
             {
                 return;
             }
-            foreach( var role in dbContext.Roles)
+            foreach( var role in Roles)
             {
                 dbContext.Roles.Add(role);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChangesAsync();
             }
         }
         /// <summary>
@@ -52,19 +52,19 @@ namespace MkAffiliationManagement.Models
                         ("user1").Result == null)
             {
                 ApplicationUser user = new ApplicationUser();
-                user.UserName = "ADMIN";
+                user.UserName = "ADMINMK";
                 user.Email = "ADMIN@gmail.com";
                 user.FirstName = "MKADMIN";
                 user.LastName = "STAFF";
                 
 
                 IdentityResult result = userManager.CreateAsync
-                (user, "MKDIAZ32$").Result;
+                (user, "MkDIAZ32$").Result;
 
-                if (result.Succeeded)
+             /*   if (result.Succeeded)
                 {
                     userManager.AddToRoleAsync(user, "Admin").Wait();
-                }
+                }*/
             }
 
 

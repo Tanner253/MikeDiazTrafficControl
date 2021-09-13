@@ -10,7 +10,7 @@ using MkAffiliationManagement.Data;
 namespace MkAffiliationManagement.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210913173652_init")]
+    [Migration("20210913191101_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -172,6 +172,9 @@ namespace MkAffiliationManagement.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
