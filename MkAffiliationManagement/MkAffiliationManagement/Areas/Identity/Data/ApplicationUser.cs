@@ -10,11 +10,15 @@ namespace MkAffiliationManagement.Areas.Identity.Data
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        
+
+        public DateTime Birthday { get; set; }
+
+
     }
+
     public class ApplicationRoles : IdentityRole
     {
         public const string Member = "Member";
-        public const string Admin = "Admin";
+        public const string Admin = "ADMIN";
     }
 }

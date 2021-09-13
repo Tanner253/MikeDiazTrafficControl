@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using MkAffiliationManagement.Areas.Identity.Data;
 using MkAffiliationManagement.data;
 using MkAffiliationManagement.Data;
+using MkAffiliationManagement.Models;
 using MkAffiliationManagement.Models.Interfaces;
 using MkAffiliationManagement.Models.Services;
 
@@ -39,7 +40,7 @@ namespace MkAffiliationManagement
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+                options.AddPolicy("ADMIN", policy => policy.RequireRole("ADMIN"));
             });
 
             services.AddIdentity<ApplicationUser, ApplicationRoles>()
@@ -59,7 +60,7 @@ namespace MkAffiliationManagement
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<ApplicationUser> userManager, IServiceProvider service)
         {
             if (env.IsDevelopment())
             {
@@ -78,8 +79,8 @@ namespace MkAffiliationManagement
             app.UseRouting();
 
             app.UseAuthorization();
-            app.UseAuthentication(); 
-
+            app.UseAuthentication();
+            StartupDbInitializer.SeedData(service, userManager);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
