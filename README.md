@@ -4,13 +4,8 @@
 
 # Project MK-Products
 ---------------------------------
-## We are deployed on Azure! (soon)
 
-[project url here]
-
----------------------------------
 ## Web Application
-***[Explain your app, should be at least a paragraph. What does it do? Why should I use? Sell your product!]***
 
 The web application consists of a frontend written in Razor views, HTML, CSS,
 Bootstrap, Popper, and jQuery. The backend was written in C# using ASP.NET Core 3.1, Entity Framework Core, and the MVC framework.
@@ -37,6 +32,7 @@ purchasing the item, hopefully increasing overall profit margins by at least 20-
  - As an User I would like to be able to learn about my favorite social media influencer while browsing their products.
  - As an User I would like to be able to read endorsments left by the social media influencer detailing the viability and usefulness of a given product.
  - As an User I would like the web app to be simple and quick to use.
+ - As an User i would like to opt into email updates and email verification for account creation
 
  - As a Developer I would like to have a secure back end database to secure the information inputed when creating new objects in the database.
  - As a Developer I would like to have Identity and Authorization in the app so an ADMIN page can be used to manage the website without developer interaction.
@@ -58,6 +54,7 @@ Microsoft Visual Studio Community 2017 (Version 15.5.7)
 - Azure
 
 - Blob storage
+- SendGrid
 
 
 ---------------------------------
@@ -95,6 +92,14 @@ dotnet run
 
 ## Usage
 COMING SOON 
+### Creating an account
+![Creating an account with validation](MkAffiliationManagement/MkAffiliationManagement/Assets/RegisterFail.PNG)
+
+### Home Page Greeting
+![Welcome Page](MkAffiliationManagement/MkAffiliationManagement/Assets/Welcome.PNG)
+
+### Login
+![Login](MkAffiliationManagement/MkAffiliationManagement/Assets/Login.PNG)
 
 ### Overview of Recent Posts
 ![Overview of Recent Posts](https://via.placeholder.com/500x250)
@@ -153,11 +158,13 @@ COMING SOON
 
 ## Change Log
 
+
 - 1.0	| Edits Readme
 - 1.1.0 | Creates Model classes, Sets up Schemas for Databases, Initializes Identity
 - 1.1.1 | Initialization and handling of databases
 - 1.1.2 | Customization of Identity/Roles
 - 1.1.3 | Repository design pattern of Advertisment model and database
+
 
 
 ------------------------------
