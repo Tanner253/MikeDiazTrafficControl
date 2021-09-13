@@ -164,7 +164,7 @@ COMING SOON
 - 1.1.1 | Initialization and handling of databases
 - 1.1.2 | Customization of Identity/Roles
 - 1.1.3 | Repository design pattern of Advertisment model and database
-
+- 1.1.4 | Successful seeding of admin user in DB
 
 
 ------------------------------
