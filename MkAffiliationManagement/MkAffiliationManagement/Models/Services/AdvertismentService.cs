@@ -1,4 +1,6 @@
-﻿using MkAffiliationManagement.data;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MkAffiliationManagement.data;
 using MkAffiliationManagement.Models.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -19,34 +21,39 @@ namespace MkAffiliationManagement.Models.Services
             return _context.Ad.Any(m => m.ID == id);
         }
 
-        public Task CreateAdvertisment(Advertisment Ad)
+        public async Task CreateAdvertisment(Advertisment Ad)
         {
-            throw new NotImplementedException();
+            _context.Add(Ad);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<Advertisment> DeleteAdvertisment(int id)
+        public async Task<Advertisment> DeleteAdvertisment(int id)
         {
-            throw new NotImplementedException();
+            var SelectedAdvert = await _context.Ad.FirstOrDefaultAsync(m => m.ID == id);
+            return SelectedAdvert;
         }
 
-        public Task DeleteAdvertismentFR(int id)
+        public async Task DeleteAdvertismentFR(int id)
         {
-            throw new NotImplementedException();
+            var SelectedAdvert = await _context.Ad.FirstOrDefaultAsync(a => a.ID == id);
+            _context.Remove(SelectedAdvert);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<Advertisment> GetAdvertisment(int id)
+        public async Task<Advertisment> GetAdvertisment(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Ad.FirstOrDefaultAsync(v => v.ID == id);
         }
 
-        public Task<IEnumerable<Advertisment>> GetAdvertisments()
+        public async Task<IEnumerable<Advertisment>> GetAdvertisments()
         {
-            throw new NotImplementedException();
+            return await _context.Ad.ToListAsync();
         }
 
-        public Task UpdateAdvertisment(int id, Advertisment Ad)
+        public async Task UpdateAdvertisment(int id, [Bind("ID, ProductName, ProductEndorsment, ProductPromotionalCode, ProductLink, Image")] Advertisment Ad)
         {
-            throw new NotImplementedException();
+            _context.Update(Ad);
+            await _context.SaveChangesAsync();
         }
     }
 }
