@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,7 +38,7 @@ namespace MkAffiliationManagement
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
-                
+
             });
             services.AddRazorPages();
             services.AddControllersWithViews();
@@ -51,7 +51,10 @@ namespace MkAffiliationManagement
 
             services.AddIdentity<ApplicationUser, ApplicationRoles>()
                 .AddEntityFrameworkStores<ApplicationDbContext>().AddRoles<ApplicationRoles>().AddDefaultTokenProviders().AddDefaultUI();
- 
+           /* services.AddDefaultIdentity<ApplicationUser>()
+               .AddRoles<IdentityRole>()
+               .AddEntityFrameworkStores<ApplicationDbContext>();
+*/
 
             //inject database
             services.AddDbContext<AdvertismentDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
@@ -71,7 +74,7 @@ namespace MkAffiliationManagement
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                
+
             }
             else
             {
@@ -84,8 +87,8 @@ namespace MkAffiliationManagement
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
             StartupDbInitializer.SeedData(service, userManager);
             app.UseEndpoints(endpoints =>
             {

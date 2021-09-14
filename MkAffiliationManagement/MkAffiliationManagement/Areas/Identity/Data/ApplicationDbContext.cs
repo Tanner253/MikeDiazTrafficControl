@@ -9,6 +9,13 @@ using MkAffiliationManagement.Areas.Identity.Data;
 
 namespace MkAffiliationManagement.Data
 {
+    /* public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+     {
+         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+         {
+
+         }
+     }*/
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRoles, string>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
@@ -84,6 +85,7 @@ namespace MkAffiliationManagement.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                   
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -97,11 +99,18 @@ namespace MkAffiliationManagement.Areas.Identity.Pages.Account
                     ///Assigns roles
                     if (Input.Email.ToLower() == "percivaltanner@gmail.com")
                     {
-
+                        Claim webAccess = new Claim(ClaimTypes.Role, ApplicationRoles.Admin, ClaimValueTypes.String);
+                        await _userManager.AddClaimAsync(user, webAccess);
                         await _userManager.AddToRoleAsync(user, ApplicationRoles.Admin);
 
                     }
                     if (Input.Email.ToLower() == "tpp@gmail.com")
+                    {
+
+                        await _userManager.AddToRoleAsync(user, ApplicationRoles.Admin);
+
+                    }
+                    if (Input.Email.ToLower() == "ttp@gmail.com")
                     {
 
                         await _userManager.AddToRoleAsync(user, ApplicationRoles.Admin);
