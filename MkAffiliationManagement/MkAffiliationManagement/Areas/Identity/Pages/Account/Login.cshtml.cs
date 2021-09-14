@@ -44,8 +44,8 @@ namespace MkAffiliationManagement.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [EmailAddress]
-            public string Email { get; set; }
+            
+            public string Username { get; set; }
 
             [Required]
             [DataType(DataType.Password)]
@@ -83,11 +83,15 @@ namespace MkAffiliationManagement.Areas.Identity.Pages.Account
 
 
                 
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(Input.Username, Input.Password,  false, false);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    var signedIn = await _userManager.FindByNameAsync(Input.Username);
+                    if (await _userManager.IsInRoleAsync(signedIn, ApplicationRoles.Admin))
+                    {
+                        return LocalRedirect("~/Advertisments/Index");
+                    }
                 }
                 if (result.RequiresTwoFactor)
                 {

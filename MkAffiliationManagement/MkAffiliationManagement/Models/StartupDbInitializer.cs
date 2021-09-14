@@ -14,8 +14,8 @@ namespace MkAffiliationManagement.Models
     {
         private static List<ApplicationRoles> Roles = new List<ApplicationRoles>()
         {
-            new ApplicationRoles{ Name = ApplicationRoles.Admin, NormalizedName = ApplicationRoles.Admin.ToUpper() },
-            new ApplicationRoles{Name = ApplicationRoles.Admin, NormalizedName = ApplicationRoles.Admin.ToUpper() }
+            new ApplicationRoles{Name = ApplicationRoles.Admin, NormalizedName = ApplicationRoles.Admin.ToUpper() },
+            new ApplicationRoles{Name = ApplicationRoles.Member, NormalizedName = ApplicationRoles.Member.ToUpper() }
 
         };
     public static void SeedData(IServiceProvider servicesProvider, UserManager<ApplicationUser> userManager)
@@ -26,7 +26,7 @@ namespace MkAffiliationManagement.Models
                 
 
                 AddRoles(dbContext);
-                SeedUsers(userManager);
+                //SeedUsers(userManager);
             }
         }
 
