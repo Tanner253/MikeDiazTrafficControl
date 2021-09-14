@@ -43,14 +43,14 @@ namespace MkAffiliationManagement
             services.AddRazorPages();
             services.AddControllersWithViews();
 
-
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
             });
 
+
             services.AddIdentity<ApplicationUser, ApplicationRoles>()
-                .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().AddDefaultUI();
+                .AddEntityFrameworkStores<ApplicationDbContext>().AddRoles<ApplicationRoles>().AddDefaultTokenProviders().AddDefaultUI();
  
 
             //inject database

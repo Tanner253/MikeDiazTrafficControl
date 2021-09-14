@@ -12,7 +12,7 @@ using MkAffiliationManagement.Areas.Identity.Data;
 
 namespace MkAffiliationManagement.Controllers
 {
-    [Authorize(Policy = "Admin")]
+    
     public class AdvertismentsController : Controller
     {
         private readonly AdvertismentDbContext _context;
@@ -122,6 +122,7 @@ namespace MkAffiliationManagement.Controllers
         }
 
         // GET: Advertisments/Delete/5
+        [Authorize(Roles = ApplicationRoles.Admin)]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -140,6 +141,7 @@ namespace MkAffiliationManagement.Controllers
         }
 
         // POST: Advertisments/Delete/5
+        [Authorize(Roles = ApplicationRoles.Admin)]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
