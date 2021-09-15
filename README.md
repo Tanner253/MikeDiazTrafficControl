@@ -101,17 +101,20 @@ COMING SOON
 ### Login
 ![Login](MkAffiliationManagement/MkAffiliationManagement/Assets/Login.PNG)
 
+### Authentication
+![Login](MkAffiliationManagement/MkAffiliationManagement/Assets/Authentication.PNG)
+
 ### Overview of Recent Posts
-![Overview of Recent Posts](https://via.placeholder.com/500x250)
+![Overview of Recent Posts](MkAffiliationManagement/MkAffiliationManagement/Assets/List.PNG)
 
 ### Creating a Post
-![Post Creation](https://via.placeholder.com/500x250)
+![Post Creation](MkAffiliationManagement/MkAffiliationManagement/Assets/Create.PNG)
 
 ### Enriching a Post
-![Enriching Post](https://via.placeholder.com/500x250)
+![Enriching Post](MkAffiliationManagement/MkAffiliationManagement/Assets/Edit.PNG)
 
 ### Viewing Post Details
-![Details of Post](https://via.placeholder.com/500x250)
+![Details of Post](MkAffiliationManagement/MkAffiliationManagement/Assets/Details.PNG)
 
 ---------------------------
 ## Data Flow (Frontend, Backend, REST API)
