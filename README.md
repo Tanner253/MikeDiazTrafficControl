@@ -39,7 +39,7 @@ purchasing the item, hopefully increasing overall profit margins by at least 20-
  - As a Developer I would like the app to have low load times, clean UX and UI, and a clear and concise reason for being on the website so theres no confusion for the user.
  - As a Developer I would like to handle as many user input errors as possible to avoid any server side crashes when creating new database entrys.
  - As a Developer I need to process the inputs given and edit them accordingly to fit the requirements of the database.
- - As a Developer I would like to complete Identity and Authorization within the next week.
+ - As a Developer I would like to complete Identity and Authorization within the next week. (9/18)
 ---------------------------------
 
 ## Tools Used
