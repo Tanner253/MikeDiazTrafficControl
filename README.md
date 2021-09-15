@@ -157,6 +157,11 @@ COMING SOON
 | Username | string | NO |
 | Email	 | string	| YES	|
 
+### User Roles
+
+| Parameter | Type | Required |
+| ApplicationRoles | Admin | YES |
+| ApplicationRoles | Member | YES |
 ---------------------------
 
 ## Change Log
@@ -169,6 +174,7 @@ COMING SOON
 - 1.1.3 | Repository design pattern of Advertisment model and database
 - 1.1.4 | Successful seeding of admin user in DB
 - 1.2.0 | Working Identity with Roles authentication and authorization, cleaned UI, APP is functional.
+- 1.2.1 | Adds Media to README, Cleans up UI
 
 
 ------------------------------
