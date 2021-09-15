@@ -47,7 +47,7 @@ namespace MkAffiliationManagement.Controllers
         }
 
         // GET: Advertisments/Create
-        
+        [Authorize(Roles = ApplicationRoles.Admin)]
         public IActionResult Create()
         {
             return View();
@@ -56,7 +56,7 @@ namespace MkAffiliationManagement.Controllers
         // POST: Advertisments/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        
+        [Authorize(Roles = ApplicationRoles.Admin)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,ProductName,ProductEndorsment,ProductPromotionalCode,ProductLink,Image")] Advertisment advertisment)
@@ -71,6 +71,7 @@ namespace MkAffiliationManagement.Controllers
         }
 
         // GET: Advertisments/Edit/5
+        [Authorize(Roles = ApplicationRoles.Admin)]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -89,8 +90,10 @@ namespace MkAffiliationManagement.Controllers
         // POST: Advertisments/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = ApplicationRoles.Admin)]
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> Edit(int id, [Bind("ID,ProductName,ProductEndorsment,ProductPromotionalCode,ProductLink,Image")] Advertisment advertisment)
         {
             if (id != advertisment.ID)
@@ -152,6 +155,8 @@ namespace MkAffiliationManagement.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = ApplicationRoles.Admin)]
         private bool AdvertismentExists(int id)
         {
             return _context.Ad.Any(e => e.ID == id);
