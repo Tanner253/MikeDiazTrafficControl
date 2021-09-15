@@ -11,12 +11,14 @@
 <link rel="stylesheet" href="~/css/site.css" />
 <h1>All Items</h1>
 
-@if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
+@if(SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
 {
+
     <p>
         <a asp-action="Create">Create New</a>
     </p>
 }
+
 <table class="table">
     <thead>
         <tr>
