@@ -9,8 +9,11 @@
 
 <h4>Advertisment</h4>
 <hr />
-<div class="row" max-width:"500" >
-    <div class="col-md-4">
+<div class="row" max-width:"500">
+    <div class="col-md-4 ">
+        <img style="width:500px;" src="@Model.Image" />
+    </div>
+    <div style="margin-left: 100px;" class="col-md-6 ml-auto">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ID" />
@@ -39,20 +42,19 @@
                 <textarea asp-for="Image" class="form-control"></textarea>
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-outline-primary" />
+            <div style="padding-top:20px;" class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
-<div class="col-md-4">
-    <img src="@Model.Image" />
+
 </div>
 
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
+<div>
 
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+    <a style="padding-top:20px;" class="btn btn-secondary" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

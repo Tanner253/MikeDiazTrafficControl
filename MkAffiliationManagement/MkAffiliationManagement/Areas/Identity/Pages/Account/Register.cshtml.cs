@@ -52,7 +52,7 @@ namespace MkAffiliationManagement.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
             [Required]
-            [Display(Name = "UserName")]
+            [Display(Name = "Username")]
             public string Username { get; set; }
             [DataType(DataType.DateTime)]
             public DateTime Birthday { get; set; }

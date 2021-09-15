@@ -52,7 +52,7 @@ namespace MkAffiliationManagement.Areas.Identity.Pages.Account
             public string Password { get; set; }
 
             [Display(Name = "Remember me?")]
-            public bool RememberMe { get; set; }
+            public bool RememberMe { get; set; } 
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -83,7 +83,7 @@ namespace MkAffiliationManagement.Areas.Identity.Pages.Account
 
 
                 
-                var result = await _signInManager.PasswordSignInAsync(Input.Username, Input.Password,  false, false);
+                var result = await _signInManager.PasswordSignInAsync(Input.Username, Input.Password,  true, false);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
@@ -92,6 +92,7 @@ namespace MkAffiliationManagement.Areas.Identity.Pages.Account
                     {
                         return LocalRedirect("~/Advertisments/Index");
                     }
+                    return LocalRedirect("~/Home/Index");
                 }
                 if (result.RequiresTwoFactor)
                 {
