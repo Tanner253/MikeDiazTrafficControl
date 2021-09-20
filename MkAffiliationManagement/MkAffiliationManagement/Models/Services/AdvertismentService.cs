@@ -50,7 +50,7 @@ namespace MkAffiliationManagement.Models.Services
             return await _context.Ad.ToListAsync();
         }
 
-        public async Task UpdateAdvertisment(int id, [Bind("ID, ProductName, ProductEndorsment, ProductPromotionalCode, ProductLink, Image")] Advertisment Ad)
+        public async Task UpdateAdvertisment(int id, [Bind("ID, ProductName, ProductEndorsment, ProductPromotionalCode, ProductLink,Engagements, Image")] Advertisment Ad)
         {
             _context.Update(Ad);
             await _context.SaveChangesAsync();

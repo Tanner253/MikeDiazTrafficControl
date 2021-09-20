@@ -25,6 +25,8 @@ namespace MkAffiliationManagement.Models
         [Required(ErrorMessage = "Please enter a VALID image link")]
         [Display(Name = "Picture")]
         public string Image { get; set; }
+        [Display(Name ="Engagement - Total Clicks")]
+        public int Engagements { get; set; }
         ///possible property for product rating from MK
     }
 }

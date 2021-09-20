@@ -59,7 +59,7 @@ namespace MkAffiliationManagement.Controllers
         [Authorize(Roles = ApplicationRoles.Admin)]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,ProductName,ProductEndorsment,ProductPromotionalCode,ProductLink,Image")] Advertisment advertisment)
+        public async Task<IActionResult> Create([Bind("ID,ProductName,ProductEndorsment,ProductPromotionalCode,ProductLink,Engagements,Image")] Advertisment advertisment)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace MkAffiliationManagement.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public async Task<IActionResult> Edit(int id, [Bind("ID,ProductName,ProductEndorsment,ProductPromotionalCode,ProductLink,Image")] Advertisment advertisment)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,ProductName,ProductEndorsment,ProductPromotionalCode,ProductLink,Engagements,Image")] Advertisment advertisment)
         {
             if (id != advertisment.ID)
             {
@@ -154,7 +154,13 @@ namespace MkAffiliationManagement.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+    /*    private async Task<IActionResult> Engaged(int id)
+        {
+            var ad = await _context.Ad.FindAsync(id);
+            ad.Engagements++;
+            await _context.SaveChangesAsync();
+            return Redirect(ad.ProductLink);
+        }*/
 
         [Authorize(Roles = ApplicationRoles.Admin)]
         private bool AdvertismentExists(int id)
