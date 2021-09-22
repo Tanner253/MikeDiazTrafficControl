@@ -59,9 +59,10 @@ Microsoft Visual Studio Community 2017 (Version 15.5.7)
 
 ---------------------------------
 
-## Recent Updates
+## Coming soon
+-Blog posts functionality 9/23
 
-#### V 1.4
+
 
 
 ---------------------------
