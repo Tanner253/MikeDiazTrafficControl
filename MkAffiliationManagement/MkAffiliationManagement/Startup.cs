@@ -57,9 +57,10 @@ namespace MkAffiliationManagement
 */
 
             //inject database
-            services.AddDbContext<AdvertismentDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
+            services.AddDbContext<AdvertismentDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AdConnection")));
+            services.AddDbContext<BlogDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BlogConnection")));
             services.AddDbContext<ApplicationDbContext>(options =>
-           options.UseSqlServer(Configuration.GetConnectionString("ApplicationDbContextConnection")));
+           options.UseSqlServer(Configuration.GetConnectionString("UserConnection")));
 
 
 
