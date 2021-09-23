@@ -25,7 +25,7 @@ namespace MkAffiliationManagement.Data
 
                 });
         }
-        DbSet<Blog> Blog { get; set; }
+        public DbSet<Blog> Blog { get; set; }
     }
 }
 
