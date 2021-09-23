@@ -1,5 +1,8 @@
 # Active Sponsors MKD
 ---------------------------------
+Development on hold -> waiting for front end dev to have time
+
+implementing basic blog functionality in the meantime
 ---------------------------------
 
 # Project MK-Products
