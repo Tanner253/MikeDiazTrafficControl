@@ -95,7 +95,7 @@ dotnet run
 
 
 ---------------------------------
-<details open>
+<details>
 <summary>Details</summary>
 <br>
 
