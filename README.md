@@ -133,16 +133,7 @@ COMING SOON
 
  Visual Demmos
 </details>
----------------------------
-## Data Model
 
-
-### Overall Project Schema
-COMING SOON
-***[Add a description of your DB schema. Explain the relationships to me.]***
-![Database Schema](/assets/img/ERD.png)
-
----------------------------
 ## Model Properties and Requirements
 
 ### Advertisment/Sponsorship product
