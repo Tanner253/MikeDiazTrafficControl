@@ -55,6 +55,8 @@ Microsoft Visual Studio Community 2017 (Version 15.5.7)
 - xUnit
 - Bootstrap
 - Azure
+- Ajax
+- JavaScript
 
 - Blob storage
 - SendGrid
