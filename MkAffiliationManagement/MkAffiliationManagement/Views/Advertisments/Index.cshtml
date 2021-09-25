@@ -66,7 +66,7 @@
                 <td>
                     @if (!User.IsInRole(ApplicationRoles.Admin))
                     {
-                        <a class="btn btn-outline-success btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">BUY ME!</a>
+                        <a class="btn btn-outline-success btn-lg"  href="@Html.DisplayFor(modelItem => item.ProductLink)">BUY ME!</a>
                     }
                     </td>
                 @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))

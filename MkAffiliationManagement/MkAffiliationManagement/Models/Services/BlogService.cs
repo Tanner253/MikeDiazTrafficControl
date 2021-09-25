@@ -51,7 +51,7 @@ namespace MkAffiliationManagement.Models.Services
             return await _context.Blog.ToListAsync();
         }
 
-        public async Task UpdateBlog(int id, [Bind("ID,Title, Body, Image")]Blog blog)
+        public async Task UpdateBlog(int id, [Bind("ID,Title, Body, Image, Date")]Blog blog)
         {
             _context.Update(blog);
             await _context.SaveChangesAsync();

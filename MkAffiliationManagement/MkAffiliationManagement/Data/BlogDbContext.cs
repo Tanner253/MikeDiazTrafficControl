@@ -21,7 +21,9 @@ namespace MkAffiliationManagement.Data
                     ID = 1,
                     Title = "This is the Title.",
                     Body = "This is the Body",
-                    Image = ""
+                    Image = "",
+                    Date = DateTime.Now
+                    
 
                 });
         }
