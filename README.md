@@ -96,7 +96,7 @@ dotnet run
 
 ---------------------------------
 <details>
-<summary>Details</summary>
+# <summary>Visual Demos</summary>
 <br>
 
 ## Usage
