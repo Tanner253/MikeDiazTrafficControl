@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MkAffiliationManagement.Migrations.BlogDb
 {
@@ -14,7 +15,8 @@ namespace MkAffiliationManagement.Migrations.BlogDb
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(nullable: true),
                     Body = table.Column<string>(nullable: true),
-                    Image = table.Column<string>(nullable: true)
+                    Image = table.Column<string>(nullable: true),
+                    Date = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -23,8 +25,8 @@ namespace MkAffiliationManagement.Migrations.BlogDb
 
             migrationBuilder.InsertData(
                 table: "Blog",
-                columns: new[] { "ID", "Body", "Image", "Title" },
-                values: new object[] { 1, "This is the Body", "", "This is the Title." });
+                columns: new[] { "ID", "Body", "Date", "Image", "Title" },
+                values: new object[] { 1, "This is the Body", new DateTime(2021, 9, 24, 13, 23, 47, 626, DateTimeKind.Local).AddTicks(8071), "", "This is the Title." });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
