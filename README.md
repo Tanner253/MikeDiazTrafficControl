@@ -95,6 +95,9 @@ dotnet run
 
 
 ---------------------------------
+<details open>
+<summary>Details</summary>
+<br>
 
 ## Usage
 COMING SOON 
@@ -128,6 +131,8 @@ COMING SOON
 ***[Add a clean and clear explanation of what the data flow is. Walk me through it.]***
 ![Data Flow Diagram](/assets/img/Flowchart.png)
 
+ Visual Demmos
+</details>
 ---------------------------
 ## Data Model
 
