@@ -36,13 +36,15 @@ purchasing the item, hopefully increasing overall profit margins by at least 20-
  - As an User I would like to be able to read endorsments left by the social media influencer detailing the viability and usefulness of a given product.
  - As an User I would like the web app to be simple and quick to use.
  - As an User i would like to opt into email updates and email verification for account creation
+ - As an User I would like to be able to read the influencers blog where I can learn more and become engaged with the influencer
 
  - As a Developer I would like to have a secure back end database to secure the information inputed when creating new objects in the database.
  - As a Developer I would like to have Identity and Authorization in the app so an ADMIN page can be used to manage the website without developer interaction.
  - As a Developer I would like the app to have low load times, clean UX and UI, and a clear and concise reason for being on the website so theres no confusion for the user.
  - As a Developer I would like to handle as many user input errors as possible to avoid any server side crashes when creating new database entrys.
  - As a Developer I need to process the inputs given and edit them accordingly to fit the requirements of the database.
- - As a Developer I would like to complete Identity and Authorization within the next week. (9/18)
+ - As a Developer I would like to complete Identity and Authorization within the next week. (9/18) (completed)
+ - As a Developer I would like to impliment CRUD for a basic blogging system where the admin of the site is able to post new blog post for people to view and digest.
 ---------------------------------
 
 ## Tools Used
