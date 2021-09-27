@@ -2,6 +2,15 @@
 for details on configuring this project to bundle and minify static web assets. */
 /*do css here :)*/
 
+.btn-light-moon {
+    background: #FFEFBA; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #000;
+    border: 3px solid #eee;
+    display:flex;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -127,4 +136,5 @@ body {
     background: linear-gradient(to left, #dd5e89, #f7bb97);
     min-height: 100vh;
 }
+
 

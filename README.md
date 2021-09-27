@@ -92,9 +92,11 @@ dotnet run
 
 ## Usage
 COMING SOON 
-### Creating an account
-![Creating an account with validation](MkAffiliationManagement/MkAffiliationManagement/Assets/RegisterFail.PNG)
+### Home page greeting 2.0
+![Home page greeting 2.0](MkAffiliationManagement/MkAffiliationManagement/Assets/NewHome.PNG)
 
+###Advertisment list 2.0
+![Creating an account with validation](MkAffiliationManagement/MkAffiliationManagement/Assets/UpdatedAdList.PNG)
 ### Home Page Greeting
 ![Welcome Page](MkAffiliationManagement/MkAffiliationManagement/Assets/Welcome.PNG)
 
