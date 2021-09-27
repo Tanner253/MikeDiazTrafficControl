@@ -17,10 +17,10 @@ namespace MkAffiliationManagement.Models
         [Display(Name = "Endorsment")]
         public string ProductEndorsment { get; set; }
         [Required(ErrorMessage = "Please enter the promotional code given to you from the company sponsoring you")]
-        [Display(Name = "PROMO CODE")]
+        [Display(Name = "Promotion")]
         public string ProductPromotionalCode { get; set; }
         [Required(ErrorMessage = "Please enter a link to the product")]
-        [Display(Name = "Link to product")]
+        [Display(Name = "Product Link")]
         public string ProductLink { get; set; }
         [Required(ErrorMessage = "Please enter a VALID image link")]
         [Display(Name = "Picture")]

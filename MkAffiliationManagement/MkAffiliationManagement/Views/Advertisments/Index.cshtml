@@ -9,9 +9,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link rel="stylesheet" href="~/css/site.css" />
-<h1>All Items</h1>
+<div class="row py-5">
+    <div class="col-lg-9 mx-auto text-white text-center">
+        <h1 class="display-4">My Promotions!</h1>
 
-@if(SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
+
+    </div>
+</div>
+
+@if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
 {
 
     <p>
@@ -19,7 +25,7 @@
     </p>
 }
 
-<table class="table">
+<table class="table" style="background:white; border:solid black 2px; border-radius:12px;">
     <thead>
         <tr>
             <th>
@@ -66,15 +72,15 @@
                 <td>
                     @if (!User.IsInRole(ApplicationRoles.Admin))
                     {
-                        <a class="btn btn-outline-success btn-lg"  href="@Html.DisplayFor(modelItem => item.ProductLink)">BUY ME!</a>
+                        <a class="btn btn-outline-success btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">BUY ME!</a>
                     }
-                    </td>
+                </td>
                 @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
                 {
 
                     <td>
                         <a style="margin-bottom:10px;" class="btn btn-outline-primary btn-lg" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
-                        <a class="btn btn-outline-secondary btn-lg"  asp-action="Details" asp-route-id="@item.ID">Details</a>
+                        <a class="btn btn-outline-secondary btn-lg" asp-action="Details" asp-route-id="@item.ID">Details</a>
                         <a style="margin-top: 10px " class="btn btn-outline-danger btn-lg" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                     </td>
                 }
