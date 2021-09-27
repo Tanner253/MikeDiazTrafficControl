@@ -20,9 +20,15 @@
 @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
 {
 
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
+
+    <div class="row py-5">
+        <div class="col-lg-9 mx-auto text-white text-center">
+            <a class="col btn btn-light-moon text-center" style="display: flex; flex-direction: column; justify-content: center; text-align: center;
+" asp-action="Create">Create New</a>
+
+
+        </div>
+    </div>
 }
 
 <table class="table" style="background:white; border:solid black 2px; border-radius:12px;">
@@ -43,8 +49,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Image)
             </th>
+
             <th>
-                CLICK ME!
+                @if (!User.IsInRole(ApplicationRoles.Admin))
+                {
+                    <p>CLICK ME!</p>
+                }
             </th>
             <th>
             </th>
