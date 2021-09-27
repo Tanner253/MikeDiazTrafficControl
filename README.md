@@ -97,6 +97,8 @@ dotnet run
 
 
 ---------------------------------
+### Creating an account
+![Creating an account with validation](MkAffiliationManagement/MkAffiliationManagement/Assets/NewHome.PNG)
 <details>
 # <summary>Visual Demos</summary>
 <br>
