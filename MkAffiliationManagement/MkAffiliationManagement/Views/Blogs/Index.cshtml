@@ -10,7 +10,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>McKenzies Blog</h1>
+<div class="row py-5">
+    <div class="col-lg-9 mx-auto text-white text-center">
+        <h1 class="display-4">Blog</h1>
+
+
+    </div>
+</div>
 @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
 {
 
@@ -18,7 +24,7 @@
         <a asp-action="Create">Create New</a>
     </p>
 }
-<table class="table">
+<table class="table" style="background:white; border:solid black 2px;">
     <thead>
         <tr>
             <th>
@@ -54,7 +60,9 @@
             <td>
             </td>
             <td>
+                <b>
                 @Html.DisplayFor(modelItem => item.Date)
+                    </b>
             </td>
             @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
             {
