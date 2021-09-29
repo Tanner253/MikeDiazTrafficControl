@@ -4,11 +4,17 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<div class="row py-5">
+    <div class="col-lg-9 mx-auto text-white text-center">
+        <h1 class="display-4">Edit Blog -- @Model.Title</h1>
 
-<h4>Blog</h4>
+
+    </div>
+</div>
+
+
 <hr />
-<div class="row">
+<div style="justify-content:center; font-size:1.8em;" class="row text-white">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -33,16 +39,22 @@
                 <input asp-for="Date" class="form-control" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="padding-top:20px;">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
+ 
+<div class="row py-5">
+    <div class="col-lg-9 mx-auto text-white text-center">
+        <a asp-action="Index">Back to List</a>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+
+    </div>
 </div>
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

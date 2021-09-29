@@ -23,9 +23,8 @@
 
     <div class="row py-5">
         <div class="col-lg-9 mx-auto text-white text-center">
-            <a class="col btn btn-light-moon text-center" style="display: flex; flex-direction: column; justify-content: center; text-align: center;
+            <a class="col btn btn-dark-moon btn-rounded text-center" style="display: flex; flex-direction: column; justify-content: center; text-align: center; height:100px;
 " asp-action="Create">Create New</a>
-
 
         </div>
     </div>
@@ -67,7 +66,7 @@
                 <td>
                     <a asp-action="Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.ProductName)</a>
                 </td>
-                <td>
+                <td style="width:150px;">
                     @Html.DisplayFor(modelItem => item.ProductEndorsment)
                 </td>
                 <td>
@@ -98,3 +97,4 @@
         }
     </tbody>
 </table>
+

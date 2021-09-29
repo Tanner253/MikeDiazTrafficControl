@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using MkAffiliationManagement.Areas.Identity.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,6 +14,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/stylesheet.scss" />
 </head>
 <body>
     <header>
@@ -23,11 +29,31 @@
                     <ul class="navbar-nav flex-grow-1">
                         <partial name="_LoginPartial" />
 
-                          <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Blogs" asp-action="Index">My Blog</a>
-                            </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Advertisments" asp-action="Index">Browse my sponsors</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Blogs" asp-action="Index">
+
+                                @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
+                                {
+                                    <p>Blog Management</p>
+                                }
+                                else
+                                {
+                                    <p>My Blog</p>
+                                }
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Advertisments" asp-action="Index">
+                                @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
+                                {
+                                    <p>Advertisment Management</p>
+                                }
+                                else
+                                {
+                                    <p> Browse my sponsors!</p>
+                                }
+
+                            </a>
                         </li>
                     </ul>
                 </div>
