@@ -1,13 +1,7 @@
 # Active Sponsors MKD
 ---------------------------------
 ## Production deployment on hold
-
-implementing basic blog functionality in the meantime
 ---------------------------------
-
-# Project MK-Products
----------------------------------
-
 ## Web Application
 
 The web application consists of a frontend written in Razor views, HTML, CSS,
@@ -26,8 +20,6 @@ money for the social media influencer. The website will redirect traffic while i
 
 Ideally, users come to the site, read about their influencers, read their endorsements, and then via inputting the promo code manually or clicking the buy me button
 purchasing the item, hopefully increasing overall profit margins by at least 20-30% than prior to using this web app.
-
-
 
 ---------------------------------
 ## User Stories:
@@ -65,13 +57,7 @@ Microsoft Visual Studio Community 2017 (Version 15.5.7)
 
 
 ---------------------------------
-
-## Coming soon
--Blog posts functionality 9/23
-
-
-
-
+Current events: Waiting for client feedback.
 ---------------------------
 
 ## Getting Started
