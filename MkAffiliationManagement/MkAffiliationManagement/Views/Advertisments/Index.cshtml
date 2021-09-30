@@ -73,7 +73,7 @@
                     @Html.DisplayFor(modelItem => item.ProductPromotionalCode)
                 </td>
                 <td>
-                    <a class="btn btn-outline-primary btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">PRODUCT LINK</a>
+                    <a class="btn btn-primary btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">PRODUCT LINK</a>
                 </td>
                 <td>
                     <img width="250" height="380" src="@item.Image" />
@@ -81,16 +81,16 @@
                 <td>
                     @if (!User.IsInRole(ApplicationRoles.Admin))
                     {
-                        <a class="btn btn-outline-success btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">BUY ME!</a>
+                        <a class="btn btn-success btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">BUY ME!</a>
                     }
                 </td>
                 @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
                 {
 
                     <td>
-                        <a style="margin-bottom:10px;" class="btn btn-outline-primary btn-lg" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
-                        <a class="btn btn-outline-secondary btn-lg" asp-action="Details" asp-route-id="@item.ID">Details</a>
-                        <a style="margin-top: 10px " class="btn btn-outline-danger btn-lg" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        <a style="margin-bottom:10px;" class="btn btn-primary btn-lg" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                        <a class="btn btn-secondary btn-lg" asp-action="Details" asp-route-id="@item.ID">Details</a>
+                        <a style="margin-top: 10px " class="btn btn-danger btn-lg" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                     </td>
                 }
             </tr>
