@@ -100,6 +100,7 @@ COMING SOON
 
 ### Blog List Admin 
 ![ Blog List Admin ](MkAffiliationManagement/MkAffiliationManagement/Assets/BlogList.PNG)
+ 
 ###Advertisment list 2.0
 ![Creating an account with validation](MkAffiliationManagement/MkAffiliationManagement/Assets/UpdatedAdList.PNG)
 
