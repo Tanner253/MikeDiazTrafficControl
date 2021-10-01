@@ -86,7 +86,9 @@ dotnet run
 ### Index 2.0
 ![Landing page](MkAffiliationManagement/MkAffiliationManagement/Assets/NewHome.PNG)
 
-
+### Blog List Admin 
+![ Blog List Admin ](MkAffiliationManagement/MkAffiliationManagement/Assets/BlogList.PNG)
+ 
 ###Advertisment list 2.0
 ![Ad landing page](MkAffiliationManagement/MkAffiliationManagement/Assets/UpdatedAdList.PNG)
 <details>
@@ -98,9 +100,7 @@ COMING SOON
 ### Home page greeting 2.0
 ![Home page greeting 2.0](MkAffiliationManagement/MkAffiliationManagement/Assets/NewHome.PNG)
 
-### Blog List Admin 
-![ Blog List Admin ](MkAffiliationManagement/MkAffiliationManagement/Assets/BlogList.PNG)
- 
+
 ###Advertisment list 2.0
 ![Creating an account with validation](MkAffiliationManagement/MkAffiliationManagement/Assets/UpdatedAdList.PNG)
 
