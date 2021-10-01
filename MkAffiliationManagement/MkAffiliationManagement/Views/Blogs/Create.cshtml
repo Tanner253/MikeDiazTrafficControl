@@ -5,11 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<div class="row py-5">
+    <div class="col-lg-9 mx-auto text-white text-center">
+        <h1 class="display-4">Create a blog</h1>
 
-<h4>Blog</h4>
+
+    </div>
+</div>
 <hr />
-<div class="row">
+<div style="justify-content:center; font-size:1.8em;" class="row text-white">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -33,11 +37,11 @@
             </div>
         </form>
     </div>
+<div>
+    <a style="margin-left:440px;" class="btn btn-info" asp-action="Index">Back to List</a>
+</div>
 </div>
 
-<div>
-    <a class="btn btn-info" asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

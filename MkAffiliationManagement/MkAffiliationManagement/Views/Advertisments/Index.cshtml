@@ -76,7 +76,7 @@
                     <a class="btn btn-primary btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">PRODUCT LINK</a>
                 </td>
                 <td>
-                    <img width="250" height="380" src="@item.Image" />
+                    <img style="width:100%; max-height:250px;"  src="@item.Image" />
                 </td>
                 <td>
                     @if (!User.IsInRole(ApplicationRoles.Admin))
