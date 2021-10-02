@@ -1,10 +1,7 @@
 # Active Sponsors MKD
 ---------------------------------
+## Production deployment on hold
 ---------------------------------
-
-# Project MK-Products
----------------------------------
-
 ## Web Application
 
 The web application consists of a frontend written in Razor views, HTML, CSS,
@@ -24,8 +21,6 @@ money for the social media influencer. The website will redirect traffic while i
 Ideally, users come to the site, read about their influencers, read their endorsements, and then via inputting the promo code manually or clicking the buy me button
 purchasing the item, hopefully increasing overall profit margins by at least 20-30% than prior to using this web app.
 
-
-
 ---------------------------------
 ## User Stories:
  - As an User I would like to be able to use an intuitive web app to purchase products that my favorite social media influencer use.
@@ -33,13 +28,15 @@ purchasing the item, hopefully increasing overall profit margins by at least 20-
  - As an User I would like to be able to read endorsments left by the social media influencer detailing the viability and usefulness of a given product.
  - As an User I would like the web app to be simple and quick to use.
  - As an User i would like to opt into email updates and email verification for account creation
+ - As an User I would like to be able to read the influencers blog where I can learn more and become engaged with the influencer
 
  - As a Developer I would like to have a secure back end database to secure the information inputed when creating new objects in the database.
  - As a Developer I would like to have Identity and Authorization in the app so an ADMIN page can be used to manage the website without developer interaction.
  - As a Developer I would like the app to have low load times, clean UX and UI, and a clear and concise reason for being on the website so theres no confusion for the user.
  - As a Developer I would like to handle as many user input errors as possible to avoid any server side crashes when creating new database entrys.
  - As a Developer I need to process the inputs given and edit them accordingly to fit the requirements of the database.
- - As a Developer I would like to complete Identity and Authorization within the next week.
+ - As a Developer I would like to complete Identity and Authorization within the next week. (9/18) (completed)
+ - As a Developer I would like to impliment CRUD for a basic blogging system where the admin of the site is able to post new blog post for people to view and digest.
 ---------------------------------
 
 ## Tools Used
@@ -52,18 +49,15 @@ Microsoft Visual Studio Community 2017 (Version 15.5.7)
 - xUnit
 - Bootstrap
 - Azure
+- Ajax
+- JavaScript
 
 - Blob storage
 - SendGrid
 
 
 ---------------------------------
-
-## Recent Updates
-
-#### V 1.4
-
-
+Current events: Waiting for client feedback.
 ---------------------------
 
 ## Getting Started
@@ -89,6 +83,15 @@ dotnet run
 
 
 ---------------------------------
+### Index 2.0
+![Landing page](MkAffiliationManagement/MkAffiliationManagement/Assets/NewHome.PNG)
+
+
+###Advertisment list 2.0
+![Ad landing page](MkAffiliationManagement/MkAffiliationManagement/Assets/UpdatedAdList.PNG)
+<details>
+# <summary>Visual Demos</summary>
+<br>
 
 ## Usage
 COMING SOON 
@@ -128,16 +131,9 @@ COMING SOON
 ***[Add a clean and clear explanation of what the data flow is. Walk me through it.]***
 ![Data Flow Diagram](/assets/img/Flowchart.png)
 
----------------------------
-## Data Model
+ Visual Demmos
+</details>
 
-
-### Overall Project Schema
-COMING SOON
-***[Add a description of your DB schema. Explain the relationships to me.]***
-![Database Schema](/assets/img/ERD.png)
-
----------------------------
 ## Model Properties and Requirements
 
 ### Advertisment/Sponsorship product
@@ -161,8 +157,13 @@ COMING SOON
 | ID  | int | YES |
 | Name | string | NO |
 | Username | string | NO |
-| Email	 | string	| YES |
+| Email	| string	| YES	|
 
+### User Roles
+
+| Parameter | Type | Required |
+| ApplicationRoles | Admin | YES |
+| ApplicationRoles | Member | YES |
 ---------------------------
 
 ## Change Log
@@ -173,7 +174,10 @@ COMING SOON
 - 1.1.1 | Initialization and handling of databases
 - 1.1.2 | Customization of Identity/Roles
 - 1.1.3 | Repository design pattern of Advertisment model and database
-
+- 1.1.4 | Successful seeding of admin user in DB
+- 1.2.0 | Working Identity with Roles authentication and authorization, cleaned UI, APP is functional.
+- 1.2.1 | Adds Media to README, Cleans up UI
+- 1.3.0 | Handing off to subcontractor for front end rehauld and feedback 
 
 
 ------------------------------
