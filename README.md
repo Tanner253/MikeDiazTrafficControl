@@ -182,6 +182,7 @@ COMING SOON
 - 1.2.0 | Working Identity with Roles authentication and authorization, cleaned UI, APP is functional.
 - 1.2.1 | Adds Media to README, Cleans up UI
 - 1.3.0 | Handing off to subcontractor for front end rehauld and feedback 
+- 1.4.0 | Front end deliverable -> waiting for front end developer to rehaul catalog
 
 
 ------------------------------
