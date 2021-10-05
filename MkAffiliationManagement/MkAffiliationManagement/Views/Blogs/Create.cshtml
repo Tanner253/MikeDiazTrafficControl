@@ -23,8 +23,8 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Body" class="control-label"></label>
-                <input asp-for="Body" class="form-control" />
+                <label asp-for="Body"></label>
+                <textarea class="form-control" rows="3"></textarea>
                 <span asp-validation-for="Body" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -38,7 +38,7 @@
         </form>
     </div>
 <div>
-    <a style="margin-left:440px;" class="btn btn-info" asp-action="Index">Back to List</a>
+    <a style="margin-left:440px;" class="btn btn-secondary" asp-action="Index">Back to List</a>
 </div>
 </div>
 
