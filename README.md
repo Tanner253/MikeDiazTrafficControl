@@ -87,7 +87,7 @@ dotnet run
 ![Landing page](MkAffiliationManagement/MkAffiliationManagement/Assets/NewHome.PNG)
 
 ### Blog List Admin 
-![ Blog List Admin ](MkAffiliationManagement/MkAffiliationManagement/Assets/BlogList.PNG)
+![ Blog List Admin ](MkAffiliationManagement/MkAffiliationManagement/Assets/BlogList2.0.PNG)
  
 ###Advertisment list 2.0 (BEING COMPLETELEY OVERHAULED FOR USER)
 ![Ad landing page](MkAffiliationManagement/MkAffiliationManagement/Assets/UpdatedAdList.PNG)
