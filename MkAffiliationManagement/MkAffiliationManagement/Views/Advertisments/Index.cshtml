@@ -7,7 +7,10 @@
 @{
     ViewData["Title"] = "All Sponsorships";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var sorted = true;
 }
+
 <link rel="stylesheet" href="~/css/site.css" />
 <div class="row py-5">
     <div class="col-lg-9 mx-auto text-white text-center">
@@ -28,75 +31,92 @@
 
         </div>
     </div>
-}
 
-<table class="table" style="background:white; border:solid black 2px; border-radius:12px;">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductEndorsment)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductPromotionalCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductLink)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-
-            <th>
-                @if (!User.IsInRole(ApplicationRoles.Admin))
-                {
-                    <p>CLICK ME!</p>
-                }
-            </th>
-            <th>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <table class="table" style="background:white; border:solid black 2px; border-radius:12px;">
+        <thead>
             <tr>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.ProductName)</a>
-                </td>
-                <td style="width:150px;">
-                    @Html.DisplayFor(modelItem => item.ProductEndorsment)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductPromotionalCode)
-                </td>
-                <td>
-                    <a class="btn btn-primary btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">PRODUCT LINK</a>
-                </td>
-                <td>
-                    <img style="width:100%; max-height:250px;"  src="@item.Image" />
-                </td>
-                <td>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductEndorsment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductPromotionalCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductLink)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Image)
+                </th>
+
+                <th>
                     @if (!User.IsInRole(ApplicationRoles.Admin))
                     {
-                        <a class="btn btn-success btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">BUY ME!</a>
+                        <p>CLICK ME!</p>
                     }
-                </td>
-                @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
-                {
-
-                    <td>
-                        <a style="margin-bottom:10px;" class="btn btn-primary btn-lg" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
-                        <a class="btn btn-secondary btn-lg" asp-action="Details" asp-route-id="@item.ID">Details</a>
-                        <a style="margin-top: 10px " class="btn btn-danger btn-lg" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                    </td>
-                }
+                </th>
+                <th>
+                </th>
             </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.ProductName)</a>
+                    </td>
+                    <td style="width:150px;">
+                        @Html.DisplayFor(modelItem => item.ProductEndorsment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductPromotionalCode)
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">PRODUCT LINK</a>
+                    </td>
+                    <td>
+                        <img style="width:100%; max-height:250px;" src="@item.Image" />
+                    </td>
+                    <td>
+                        @if (!User.IsInRole(ApplicationRoles.Admin))
+                        {
+                            <a class="btn btn-success btn-lg" href="@Html.DisplayFor(modelItem => item.ProductLink)">BUY ME!</a>
+                        }
+                    </td>
+                    @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
+                    {
+
+                        <td>
+                            <a style="margin-bottom:10px;" class="btn btn-primary btn-lg" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                            <a class="btn btn-secondary btn-lg" asp-action="Details" asp-route-id="@item.ID">Details</a>
+                            <a style="margin-top: 10px " class="btn btn-danger btn-lg" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@if (!User.IsInRole(ApplicationRoles.Admin))
+{
+    <div class="containter" style="justify-content:center; display:flex; flex-wrap:wrap; gap:10px;">
+        @foreach (var item in Model)
+        {
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@item.Image" alt="@item.ProductName">
+                <div class="card-body">
+                    <h5 class="card-title">@item.ProductName</h5>
+                    <p class="card-text">@item.ProductPromotionalCode</p>
+                    <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-primary stretched-link">Learn more</a>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
+}
 @* <div class="text-center">
     <h1>All Dinosaurs</h1>
     <div class="container">
