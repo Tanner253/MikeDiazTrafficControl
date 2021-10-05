@@ -91,6 +91,8 @@ dotnet run
  
 ###Advertisment list 2.0 (BEING COMPLETELEY OVERHAULED FOR USER)
 ![Ad landing page](MkAffiliationManagement/MkAffiliationManagement/Assets/UpdatedAdList.PNG)
+###Advertisment list 2.0 (USER)
+![Ad landing page](MkAffiliationManagement/MkAffiliationManagement/Assets/UpdatedAdListUser.PNG)
 <details>
 # <summary>Visual Demos</summary>
 <br>
