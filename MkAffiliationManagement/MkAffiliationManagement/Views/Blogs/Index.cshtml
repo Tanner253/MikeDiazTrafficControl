@@ -17,6 +17,14 @@
 
     </div>
 </div>
+<div class="row py-5">
+    <div class="col-lg-9 mx-auto text-white text-center">
+        <a class="col btn btn-purple-moon btn-rounded text-center" style="display: flex; flex-direction: column; justify-content: center; text-align: center; height:100px;
+" asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">Sort By Date:</a>
+
+
+    </div>
+</div>
 @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
 {
 
@@ -94,15 +102,15 @@
                         @Html.DisplayFor(modelItem => item.Title)
 
                     </b>
-                   
+
                 </h5>
                 <h6 class="card-subtitle mb-2 text-muted">@Html.DisplayFor(modelItem => item.Date)</h6>
-                <p class="card-text" style="        
+                <p class="card-text" style="
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 max-width:inherit; ">@Html.DisplayFor(modelItem => item.Body)</p>
-                <a  asp-action="Details" asp-route-id="@item.ID" class="card-link btn btn-primary float-left stretched-link">Read More</a>
+                <a asp-action="Details" asp-route-id="@item.ID" class="card-link btn btn-primary float-left stretched-link">Read More</a>
                 <a class="btn btn-secondary float-right" href="">Share</a>
             </div>
         </div>
