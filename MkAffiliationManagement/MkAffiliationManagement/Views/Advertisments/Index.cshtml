@@ -8,17 +8,30 @@
     ViewData["Title"] = "All Sponsorships";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    var sorted = true;
+
 }
-
 <link rel="stylesheet" href="~/css/site.css" />
-<div class="row py-5">
-    <div class="col-lg-9 mx-auto text-white text-center">
-        <h1 class="display-4">My Promotions!</h1>
+@if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
+{
+
+    <div class="row py-5">
+        <div class="col-lg-9 mx-auto text-white text-center">
+            <h1 class="display-4">Manage Promotions</h1>
 
 
+        </div>
     </div>
-</div>
+}
+else
+{
+    <div class="row py-5">
+        <div class="col-lg-9 mx-auto text-white text-center">
+            <h1 class="display-4">My Promotions!</h1>
+
+
+        </div>
+    </div>
+}
 
 @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
 {
@@ -50,14 +63,11 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Image)
                 </th>
+                <th>
+                </th>
 
                 <th>
-                    @if (!User.IsInRole(ApplicationRoles.Admin))
-                    {
-                        <p>CLICK ME!</p>
-                    }
-                </th>
-                <th>
+                   <p>Management</p>
                 </th>
             </tr>
         </thead>
@@ -100,23 +110,35 @@
         </tbody>
     </table>
 }
-@if (!User.IsInRole(ApplicationRoles.Admin))
+@if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))
 {
-    <div class="containter" style="justify-content:center; display:flex; flex-wrap:wrap; gap:10px;">
-        @foreach (var item in Model)
-        {
+    <div class="row py-5">
+        <div class="col-lg-9 mx-auto text-white text-center">
+            <h1 class="display-4">The User's View:</h1>
 
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="@item.Image" alt="@item.ProductName">
-                <div class="card-body">
-                    <h5 class="card-title">@item.ProductName</h5>
-                    <p class="card-text">@item.ProductPromotionalCode</p>
-                    <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-primary stretched-link">Learn more</a>
-                </div>
-            </div>
-        }
+
+        </div>
     </div>
+
 }
+
+
+
+<div class="container" style="justify-content:center; display:flex; flex-wrap:wrap; gap:10px;">
+    @foreach (var item in Model)
+    {
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="@item.Image" alt="@item.ProductName">
+            <div class="card-body">
+                <h5 class="card-title">@item.ProductName</h5>
+                <p class="card-text">@item.ProductPromotionalCode</p>
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-primary stretched-link">Learn more</a>
+            </div>
+        </div>
+    }
+</div>
+
 @* <div class="text-center">
     <h1>All Dinosaurs</h1>
     <div class="container">

@@ -16,9 +16,24 @@ namespace MkAffiliationManagement.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            return View(await _context.Blog.ToListAsync());
+            ViewData["DateSortParm"] = sortOrder == "date_desc" ? "Date" : "date_desc" ;
+            var blogs = from b in _context.Blog select b;
+
+            switch (sortOrder)
+            {
+                case "Date":
+                    blogs = blogs.OrderBy(s => s.Date);
+                    break;
+                case "date_desc":
+                    blogs = blogs.OrderByDescending(s => s.Date);
+                    break;
+                default:
+                    blogs = blogs.OrderBy(s => s.ID);
+                    break;
+            }
+            return View(await blogs.AsNoTracking().ToListAsync());
         }
 
         public async Task<IActionResult> Details(int? id)
