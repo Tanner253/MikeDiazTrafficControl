@@ -21,7 +21,7 @@ money for the social media influencer. The website will redirect traffic while i
 Ideally, users come to the site, read about their influencers, read their endorsements, and then via inputting the promo code manually or clicking the buy me button
 purchasing the item, hopefully increasing overall profit margins by at least 20-30% than prior to using this web app.
 
----------------------------------
+-------------------------------------
 ## User Stories:
  - As an User I would like to be able to use an intuitive web app to purchase products that my favorite social media influencer use.
  - As an User I would like to be able to learn about my favorite social media influencer while browsing their products.
