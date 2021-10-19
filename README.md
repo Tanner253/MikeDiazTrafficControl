@@ -1,6 +1,6 @@
 # Active Sponsors MKD
 ---------------------------------
-## Production deployment on hold
+
 ---------------------------------
 
 ## Web Application
