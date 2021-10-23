@@ -24,31 +24,26 @@
     </div>
 </div>
 <hr />
-<dl class="row" style="background:white; justify-content:center;">
-    <dt class="col-sm-2">
-        @Html.DisplayNameFor(model => model.Title)
-    </dt>
-    <dd class="col-sm-10">
+<dl class="row" style="background:white; justify-content:center; border-radius:10px; padding:20px;">
+
+    <dd class="col-sm-12 text-center">
+        <b>
+
         @Html.DisplayFor(model => model.Title)
+        </b>
     </dd>
-    <dt class="col-sm-2">
-        @Html.DisplayNameFor(model => model.Body)
-    </dt>
-    <dd class="col-sm-10" style=" overflow-wrap:break-word; text-overflow: ellipsis;">
+    <dd class="col-sm-12 text-center">
+        <b>
+
+        Published on: @Html.DisplayFor(model => model.Date)
+        </b>
+    </dd>
+
+    <dd class="col-sm-12 text-center" style=" overflow-wrap:break-word; text-overflow: ellipsis; padding-top: 50px;">
         @Html.DisplayFor(model => model.Body)
     </dd>
-    <dt class="col-sm-2">
-        @Html.DisplayNameFor(model => model.Image)
-    </dt>
-    <dd class="col-sm-10">
-        @Html.DisplayFor(model => model.Image)
-    </dd>
-    <dt class="col-sm-2">
-        @Html.DisplayNameFor(model => model.Date)
-    </dt>
-    <dd class="col-sm-10">
-        @Html.DisplayFor(model => model.Date)
-    </dd>
+
+
 </dl>
 <div class="row" style="justify-content:center;">
 
