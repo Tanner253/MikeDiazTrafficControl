@@ -28,31 +28,6 @@
 <hr />
 <div>
 
-    <dl class="row" style="background:white; border-radius:10px; padding:20px;">
-
-        <dd class="col-sm-3">
-            <img src="@Html.DisplayFor(model => model.Image)" style="width:50%;" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductEndorsment):
-        </dt>
-        <dd class="col-sm-4">
-            @Html.DisplayFor(model => model.ProductEndorsment)
-        </dd>
-
-
-    </dl>
-    <dl class="row text-center" style="background:white; border-radius:10px; padding:20px;">
-        <dt class="col-sm-12 text-center">
-            ➼  Click on the product link below!
-            <br />
-
-            ➼   Enter the products promotional code at checkout!
-            <br />
-
-            ➼ Save! Save! Save!
-        </dt>
-    </dl>
         <dl class="row" style="background:white; border-radius:10px;">
             @*     <dt class="col-sm-2">
                     @Html.DisplayNameFor(model => model.ProductPromotionalCode)
@@ -75,6 +50,31 @@
                     @Html.DisplayFor(model => model.Engagements)
                 </dd>*@
         </dl>
+    <dl class="row" style="background:white; border-radius:10px; padding:20px;">
+
+        <dd class="col-sm-3">
+            <img src="@Html.DisplayFor(model => model.Image)" style="width:50%;" />
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductEndorsment):
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.ProductEndorsment)
+        </dd>
+
+
+    </dl>
+    <dl class="row text-center" style="background:white; border-radius:10px; padding:20px;">
+        <dt class="col-sm-12 text-center">
+            ➼  Click on the product link above!
+            <br />
+
+            ➼   Enter the products promotional code at checkout!
+            <br />
+
+            ➼ Save! Save! Save!
+        </dt>
+    </dl>
 </div>
 <div>
     @if (SignInManager.IsSignedIn(User) && User.IsInRole(ApplicationRoles.Admin))

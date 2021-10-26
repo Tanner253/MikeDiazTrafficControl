@@ -15,7 +15,7 @@
 
 <hr />
 <div style="justify-content:center; font-size:1.8em;" class="row text-white">
-    <div class="col-md-4">
+    <div class="col-md-8">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ID" />
@@ -27,7 +27,7 @@
 
             <div class="form-group">
                 <label asp-for="Body"></label>
-                <textarea asp-for="Body" class="form-control" rows="3"></textarea>
+                <textarea asp-for="Body" class="form-control" rows="6"></textarea>
                 <span asp-validation-for="Body" class="text-danger"></span>
             </div>
             

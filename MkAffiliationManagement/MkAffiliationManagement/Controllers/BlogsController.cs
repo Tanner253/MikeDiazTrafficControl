@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MkAffiliationManagement.Areas.Identity.Data;
 using MkAffiliationManagement.Data;
 using MkAffiliationManagement.Models;
 
@@ -50,10 +52,12 @@ namespace MkAffiliationManagement.Controllers
             return View(blog);
         }
 
+        [Authorize(Roles = ApplicationRoles.Admin)]
         public IActionResult Create()
         {
             return View();
         }
+        [Authorize(Roles = ApplicationRoles.Admin)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID, Title, Body, Image, Date")] Blog blog)
@@ -67,6 +71,7 @@ namespace MkAffiliationManagement.Controllers
             return View(blog);
         }
 
+        [Authorize(Roles = ApplicationRoles.Admin)]
         public async Task<IActionResult> Edit(int? id)
         {
             if(id == null)
@@ -84,6 +89,7 @@ namespace MkAffiliationManagement.Controllers
         // POST: Blogs/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = ApplicationRoles.Admin)]
         public async Task<IActionResult> Edit(int id, [Bind("ID, Title, Body, Image, Date")] Blog blog)
         {
             if (id != blog.ID)
@@ -113,7 +119,7 @@ namespace MkAffiliationManagement.Controllers
             }
             return View(blog);
         }
-
+        [Authorize(Roles = ApplicationRoles.Admin)]
         public async Task<IActionResult> Delete (int? id)
         {
             if(id == null)
@@ -129,7 +135,7 @@ namespace MkAffiliationManagement.Controllers
         }
 
         //Post: Blogs/Delete/5
-
+        [Authorize(Roles = ApplicationRoles.Admin)]
         [HttpPost, ActionName("Delete")]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
