@@ -10,7 +10,7 @@ using MkAffiliationManagement.Data;
 namespace MkAffiliationManagement.Migrations.ApplicationDb
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210920175823_init")]
+    [Migration("20211102192049_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

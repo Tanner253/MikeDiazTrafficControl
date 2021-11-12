@@ -47,7 +47,7 @@ namespace MkAffiliationManagement.Migrations.BlogDb
                         {
                             ID = 1,
                             Body = "This is the Body",
-                            Date = new DateTime(2021, 9, 24, 13, 23, 47, 626, DateTimeKind.Local).AddTicks(8071),
+                            Date = new DateTime(2021, 11, 2, 12, 20, 34, 881, DateTimeKind.Local).AddTicks(1084),
                             Image = "",
                             Title = "This is the Title."
                         });
