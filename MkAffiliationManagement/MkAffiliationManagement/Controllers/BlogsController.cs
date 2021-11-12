@@ -8,20 +8,22 @@ using Microsoft.EntityFrameworkCore;
 using MkAffiliationManagement.Areas.Identity.Data;
 using MkAffiliationManagement.Data;
 using MkAffiliationManagement.Models;
+using MkAffiliationManagement.Models.Interfaces;
 
 namespace MkAffiliationManagement.Controllers
 {
     public class BlogsController : Controller
     {
-        private BlogDbContext _context;
-        public BlogsController(BlogDbContext context)
+        private IBlogManager _context;
+        public BlogsController(IBlogManager context)
         {
             _context = context;
         }
         public async Task<IActionResult> Index(string sortOrder)
         {
             ViewData["DateSortParm"] = sortOrder == "date_desc" ? "Date" : "date_desc" ;
-            var blogs = from b in _context.Blog select b;
+            
+            var blogs = await _context.GetBlogs();
 
             switch (sortOrder)
             {
@@ -35,16 +37,13 @@ namespace MkAffiliationManagement.Controllers
                     blogs = blogs.OrderBy(s => s.ID);
                     break;
             }
-            return View(await blogs.AsNoTracking().ToListAsync());
+            return View(blogs);
         }
 
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-            if(id == null)
-            {
-                return NotFound();
-            }
-            var blog = await  _context.Blog.FirstOrDefaultAsync(m => m.ID == id);
+            
+            var blog = await _context.GetBlog(id);
             if(blog == null)
             {
                 return NotFound();
@@ -64,21 +63,18 @@ namespace MkAffiliationManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(blog);
-                await _context.SaveChangesAsync();
+               await _context.CreateBlog(blog);
+               
                 return RedirectToAction(nameof(Index));
             }
             return View(blog);
         }
 
         [Authorize(Roles = ApplicationRoles.Admin)]
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if(id == null)
-            {
-                return NotFound();
-            }
-            var blog = await _context.Blog.FindAsync(id);
+            
+            var blog = await _context.GetBlog(id);
             if(blog == null)
             {
                 return NotFound();
@@ -100,8 +96,8 @@ namespace MkAffiliationManagement.Controllers
             {
                 try
                 {
-                    _context.Update(blog);
-                    await _context.SaveChangesAsync();
+                    await _context.UpdateBlog(id,blog);
+                    
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -120,13 +116,10 @@ namespace MkAffiliationManagement.Controllers
             return View(blog);
         }
         [Authorize(Roles = ApplicationRoles.Admin)]
-        public async Task<IActionResult> Delete (int? id)
+        public async Task<IActionResult> Delete (int id)
         {
-            if(id == null)
-            {
-                return NotFound();
-            }
-            var blog = await _context.Blog.FirstOrDefaultAsync(m => m.ID == id);
+            
+            var blog = await _context.DeleteBlog(id);
             if(blog == null)
             {
                 return NotFound();
@@ -140,15 +133,15 @@ namespace MkAffiliationManagement.Controllers
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var blog = await _context.Blog.FindAsync(id);
-            _context.Blog.Remove(blog);
-            await _context.SaveChangesAsync();
+            var blog = await _context.GetBlog(id);
+            await _context.DeleteBlogFR(id);
+            
             return RedirectToAction(nameof(Index));
         }
         
         private bool BlogExists(int id)
         {
-            return _context.Blog.Any(m => m.ID == id);
+            return _context.BlogExists(id);
 
         }
         

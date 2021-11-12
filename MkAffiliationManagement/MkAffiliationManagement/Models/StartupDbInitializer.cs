@@ -26,7 +26,7 @@ namespace MkAffiliationManagement.Models
                 
 
                 AddRoles(dbContext);
-                //SeedUsers(userManager);
+                SeedUsers(userManager);
             }
         }
 
@@ -49,10 +49,10 @@ namespace MkAffiliationManagement.Models
         public static void SeedUsers(UserManager<ApplicationUser> userManager)
         {
             if (userManager.FindByNameAsync
-                        ("user1").Result == null)
+                        ("ADMIN").Result == null)
             {
                 ApplicationUser user = new ApplicationUser();
-                user.UserName = "ADMINMK@gmail.com";
+                user.UserName = "ADMIN";
                 user.Email = "ADMINMK@gmail.com";
                 user.FirstName = "MKADMIN";
                 user.LastName = "STAFF";

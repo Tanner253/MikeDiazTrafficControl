@@ -9,7 +9,7 @@ using MkAffiliationManagement.data;
 namespace MkAffiliationManagement.Migrations
 {
     [DbContext(typeof(AdvertismentDbContext))]
-    [Migration("20210920175814_init")]
+    [Migration("20211102192019_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

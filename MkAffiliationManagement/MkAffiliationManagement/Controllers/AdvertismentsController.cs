@@ -9,35 +9,31 @@ using MkAffiliationManagement.Models;
 using MkAffiliationManagement.data;
 using Microsoft.AspNetCore.Authorization;
 using MkAffiliationManagement.Areas.Identity.Data;
+using MkAffiliationManagement.Models.Interfaces;
 
 namespace MkAffiliationManagement.Controllers
 {
     
     public class AdvertismentsController : Controller
     {
-        private readonly AdvertismentDbContext _context;
+        private IAdvertismentManager _context;
 
-        public AdvertismentsController(AdvertismentDbContext context)
+        public AdvertismentsController(IAdvertismentManager context)
         {
             _context = context;
         }
         // GET: Advertisments
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Ad.ToListAsync());
+            return View(await _context.GetAdvertisments());
         }
 
         // GET: Advertisments/Details/5
         
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var advertisment = await _context.Ad
-                .FirstOrDefaultAsync(m => m.ID == id);
+            
+            var advertisment = await _context.GetAdvertisment(id);
             if (advertisment == null)
             {
                 return NotFound();
@@ -63,8 +59,8 @@ namespace MkAffiliationManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(advertisment);
-                await _context.SaveChangesAsync();
+                await _context.CreateAdvertisment(advertisment);
+                
                 return RedirectToAction(nameof(Index));
             }
             return View(advertisment);
@@ -72,14 +68,10 @@ namespace MkAffiliationManagement.Controllers
 
         // GET: Advertisments/Edit/5
         [Authorize(Roles = ApplicationRoles.Admin)]
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var advertisment = await _context.Ad.FindAsync(id);
+            var advertisment = await _context.GetAdvertisment(id);
             if (advertisment == null)
             {
                 return NotFound();
@@ -96,17 +88,12 @@ namespace MkAffiliationManagement.Controllers
 
         public async Task<IActionResult> Edit(int id, [Bind("ID,ProductName,ProductEndorsment,ProductPromotionalCode,ProductLink,Engagements,Image")] Advertisment advertisment)
         {
-            if (id != advertisment.ID)
-            {
-                return NotFound();
-            }
-
+          
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(advertisment);
-                    await _context.SaveChangesAsync();
+                    await _context.UpdateAdvertisment(id, advertisment);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -126,15 +113,10 @@ namespace MkAffiliationManagement.Controllers
 
         // GET: Advertisments/Delete/5
         [Authorize(Roles = ApplicationRoles.Admin)]
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var advertisment = await _context.Ad
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var advertisment = await _context.GetAdvertisment(id);
+            await _context.DeleteAdvertisment(id);
             if (advertisment == null)
             {
                 return NotFound();
@@ -149,9 +131,9 @@ namespace MkAffiliationManagement.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var advertisment = await _context.Ad.FindAsync(id);
-            _context.Ad.Remove(advertisment);
-            await _context.SaveChangesAsync();
+            var advertisment = await _context.GetAdvertisment(id);
+            await _context.DeleteAdvertismentFR(id);
+          
             return RedirectToAction(nameof(Index));
         }
     /*    private async Task<IActionResult> Engaged(int id)
@@ -165,7 +147,7 @@ namespace MkAffiliationManagement.Controllers
         [Authorize(Roles = ApplicationRoles.Admin)]
         private bool AdvertismentExists(int id)
         {
-            return _context.Ad.Any(e => e.ID == id);
+            return _context.AdvertismentExists(id);
         }
     }
 }

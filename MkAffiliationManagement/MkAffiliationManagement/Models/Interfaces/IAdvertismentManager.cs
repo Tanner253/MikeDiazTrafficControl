@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MkAffiliationManagement.Models.Interfaces
 {
-    interface IAdvertismentManager
+     public interface IAdvertismentManager
     {
         Task CreateAdvertisment(Advertisment Ad);
         Task UpdateAdvertisment(int id, Advertisment Ad);
